@@ -68,20 +68,20 @@ export default function ObjectFieldTemplate<
           registry={registry}
         />
       )}
-      <Grid container size={{ xs: 12, xl: 12 }} spacing={2} style={{ marginTop: '10px' }}>
+      <Grid container sx={{ width: '100%', marginTop: '10px' }} spacing={2}>
         {properties.map((element, index) =>
           // Remove the <Grid> if the inner element is hidden as the <Grid>
           // itself would otherwise still take up space.
           element.hidden ? (
             element.content
           ) : (
-            <Grid key={index} style={{ marginBottom: '10px' }}>
+            <Grid key={index} sx={{ marginBottom: '10px' }}>
               {element.content}
             </Grid>
           )
         )}
         {canExpand<T, S, F>(schema, uiSchema, formData) && (
-          <Grid container size={{ xs: 12, xl: 12 }} justifyContent='flex-end'>
+          <Grid container sx={{ width: '100%' }} justifyContent='flex-end'>
             <Grid>
               <AddButton
                 className='object-property-expand'
